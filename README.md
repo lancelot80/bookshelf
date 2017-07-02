@@ -13,6 +13,10 @@ Wicket Webapp will be started under http://localhost:8080/bookshelf
 {ProjectRoot}/mvn clean install
 ```
 
+```console
 {ProjectRoot}/bookshelf_api/mvn clean package exec:java
+```
 
+```console
 {ProjectRoot}/bookshelf_web/mvn clean tomcat7:run
+```
