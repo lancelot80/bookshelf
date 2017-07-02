@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Bookshelf</title>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+	</head>
+	<body>
+	<div>
+		<h1>Bookshelf</h1>
+	</div>
+
+	<div>
+		<form wicket:id="form">
+			<div>
+				<span>Suchen nach:</span>
+				<select wicket:id="searchedBy"/>
+				<input wicket:id="search" type="text">
+				<input type="submit" wicket:id="submit" value="Search" />
+				<span>Sortieren nach:</span>
+				<select wicket:id="sortedBy"/>
+				<select wicket:id="asc"/>
+				<input type="submit" wicket:id="sort" value="Sort" />
+			</div>
+			<br>
+			<div wicket:id="feedback"></div>
+			<table cellspacing="0" class="dataview">
+				<tr>
+					<th><a wicket:id="sortById">ID</a></th>
+					<th><a wicket:id="sortByTitle">TITLE</a></th>
+					<th><a wicket:id="sortByIsbn">ISBN</a></th>
+					<th><a wicket:id="sortByAuthor">AUTHOR</a></th>
+					<th></th>
+				</tr>
+				<tr wicket:id="books">
+					<td><span wicket:id="id">[id]</span> </td>
+					<td><input wicket:id="title" type="text"></td>
+					<td><input wicket:id="isbn" type="text"></td>
+					<td><input wicket:id="author" type="text"></td>
+					<td><a href wicket:id="editLink">Bearbeiten</a></td>
+					<td><a href wicket:id="removeLink">Loeschen</a></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div>
+		<form wicket:id="addForm">
+			<table>
+				<tbody>
+					<tr>
+						<td>Title:<input wicket:id="titleInput" type="text"></td>
+						<td>ISBN:<input wicket:id="isbnInput" type="text"></td>
+						<td>Author:<input wicket:id="authorInput" type="text"></td>
+						<td>
+							<input type="submit" value="Add">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div wicket:id="addFeedback"></div>
+		</form>
+	</div>
+
+
+	</body>
+</html>
