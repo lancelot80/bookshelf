@@ -1,2 +1,2 @@
 # Bookshelf
-simple webapp developed with java, spring boot, wicket 
+simple webapp developed with java, spring boot family, wicket
