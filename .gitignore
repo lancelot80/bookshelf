@@ -1,5 +1,5 @@
 # IDE file
-*/.idea/**
+**/.idea/**
 *.iml
 
 # Compiled class file
