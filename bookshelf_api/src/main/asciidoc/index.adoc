@@ -1,52 +1,62 @@
-= Bookshelf Spring REST Docs
-
-/books/id/{bookId}
-find books whose id equals the given keyword.
-
-.request
-include::{snippets}/findById/http-request.adoc[]
-
-.response
-include::{snippets}/findById/http-response.adoc[]
+= Bookshelf Spring REST APIs Doc
 
 
-/books/title/{title}
-find books whose title contains the given keyword.
-
-.request
-include::{snippets}/findByTitle/http-request.adoc[]
-
-.response
-include::{snippets}/findByTitle/http-response.adoc[]
+.**path: /books/id/{bookId}**
+- method: GET
+- summary: find books whose id equals the given keyword.
+- produces: application/json
+- parameters:
+* bookId: id of the book
 
 
-/books/isbn/{isbn}
-find books whose isbn contains the given keyword.
+.**path: /books/title/{title}**
+- method: GET
+- summary: find books whose title contains the given keyword.
+- produces: application/json
+- parameters:
+* title: title of the book
+    
 
-.request
-include::{snippets}/findByIsbn/http-request.adoc[]
-
-.response
-include::{snippets}/findByIsbn/http-response.adoc[]
-
-
-/books/author/{author}
-find books whose author contains the given keyword.
-
-.request
-include::{snippets}/findByAuthor/http-request.adoc[]
-
-.response
-include::{snippets}/findByAuthor/http-response.adoc[]
+.**path: /books/isbn/{isbn}**
+- method: GET
+- summary: find books whose isbn contains the given keyword.
+- produces: application/json
+- parameters:
+* isbn: isbn of the book
 
 
-/books/search?title={title}&isbn={isbn}&author={author}
-Search books whose title/isbn/author contains the given keyword.
-
-.request
-include::{snippets}/search/http-request.adoc[]
-
-.response
-include::{snippets}/search/http-response.adoc[]
+.**path: /books/author/{author}**
+- method: GET
+- summary: find books whose author contains the given keyword.
+- produces: application/json
+- parameters:
+* author: author of the book
 
 
+.**path: /books/search?title={title}&isbn={isbn}&author={author}**
+- method: GET
+- summary: search books whose title/isbn/author contains the given keyword.
+- produces: application/json
+- parameters:
+* title: title of the book
+* isbn: isbn of the book
+* author: author of the book
+
+
+.**path: /books**
+- method: POST
+- summary: add a new book.
+- produces: application/json
+- request body: book object as json
+
+
+.**path: /books/id/{bookId}**
+- method: DELETE
+- summary: delete a book.
+- request body: book object as json
+
+
+.**path: /books/id/{bookId}**
+- method: PUT
+- summary: update a book.
+- request body: book object as json

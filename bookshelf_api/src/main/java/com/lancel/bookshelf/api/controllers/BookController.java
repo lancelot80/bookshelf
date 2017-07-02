@@ -57,8 +57,8 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST)
     ResponseEntity<?> addBook(@RequestBody Book book) {
         Book result = bookmarkRepositories.save(book);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result.getId()).toUri();
-        return ResponseEntity.created(location).build();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result.getId()).toUri();
+        return ResponseEntity.created(uri).build();
     }
 
     @RequestMapping(value = "/id/{bookId}", method = RequestMethod.DELETE)
@@ -74,7 +74,7 @@ public class BookController {
         repo.setIsbn(book.getIsbn());
         repo.setTitle(book.getTitle());
         Book result = bookmarkRepositories.save(repo);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().buildAndExpand(result.getId()).toUri();
-        return ResponseEntity.created(location).build();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().buildAndExpand(result.getId()).toUri();
+        return ResponseEntity.created(uri).build();
     }
 }
