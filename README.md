@@ -9,7 +9,9 @@ Please see REST APIs Doc for Details
 Wicket Webapp will be started under http://localhost:8080/bookshelf
 
 # How to run
+```console
 {ProjectRoot}/mvn clean install
+```
 
 {ProjectRoot}/bookshelf_api/mvn clean package exec:java
 
